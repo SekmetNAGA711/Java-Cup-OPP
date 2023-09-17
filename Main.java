@@ -19,6 +19,9 @@ public class Main {
         Chocolate chocolate = new Chocolate();
         cupcakeMenu.add(chocolate);
 
+
+
+
         System.out.println("We are in the middle of creating the cupcake menu. We currently have three cupcakes on the menu but we need to decide on pricing.");
 
         Scanner input = new Scanner(System.in);
@@ -53,6 +56,45 @@ public class Main {
         cupcakeMenu.add(redVelvet);
         cupcakeMenu.add(chocolate);
 
+
+        ArrayList<Drink> drinkMenu = new ArrayList<>();
+
+        Drink water = new Drink();
+
+
+        Soda soda = new Soda();
+
+
+        Milk milk = new Milk();
+
+        System.out.println("We are deciding on the price for our soda. Here is the description:");
+        soda.type();
+        System.out.println("How much would you like to charge for the soda? (Input a numerical number taken to 2 decimal places)");
+        priceText = input.nextLine();
+        price = Double.parseDouble(priceText);
+        soda.setPrice(price);
+
+        // Pricing milk
+        System.out.println("We are deciding on the price for our milk. Here is the description:");
+        milk.type();
+        System.out.println("How much would you like to charge for the milk? (Input a numerical number taken to 2 decimal places)");
+        priceText = input.nextLine();
+        price = Double.parseDouble(priceText);
+        milk.setPrice(price);
+
+
+
+
+        // Adding drinks to the drinkMenu
+        drinkMenu.add(water);
+        drinkMenu.add(soda);
+        drinkMenu.add(milk);
+
+        new Order(cupcakeMenu, drinkMenu);
+
+
+
     }
+
 
 }
